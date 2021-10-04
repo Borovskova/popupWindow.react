@@ -1,6 +1,9 @@
 
 import React from 'react'
 import PopupWindow from './PopupWindow.js'
+import ComponentC from './componentC.js'
+
+
 
 
 
@@ -47,8 +50,7 @@ class App extends React.PureComponent {
   render() {
     return (
       <div style={BUTTON_WRAP_STYLES}>
-        <h1>Popup window will load after click on button</h1>
-        <button onClick={this.openPopupWindow}>open popup</button>
+        
         {this.state.showPopupWindow && (
           <PopupWindow>
             <button onClick={() => {
@@ -58,7 +60,9 @@ class App extends React.PureComponent {
             </button>
           </PopupWindow>
         )}
+        <ComponentC parentMethod= {this.openPopupWindow}></ComponentC>
       </div>
+
     );
   }
 }
